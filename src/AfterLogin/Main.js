@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ModalBtn from './ModalBtn';
 import styled from 'styled-components';
 
-//style 적용 안됨ㅜ
 const ModalButton = styled.button`
     display: flex;
     justifyContent: center;
