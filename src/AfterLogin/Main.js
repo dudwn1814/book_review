@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ModalBtn from './ModalBtn';
 import styled from 'styled-components';
 import BookSearch from './BookSearch';
+import BookCard from './BookCard';
 
 const ModalButton = styled.button`
     display: flex;
@@ -54,6 +55,7 @@ function Main(){
     return(
         <div>
             <h1>로그인 후 페이지</h1>
+            <BookCard/>
             <div>
                 <ModalButton onClick={showModal}> 작성하기 </ModalButton>
                 <ModalBtn visible={isModalVisible} onOk={handleOk} header="도서 정보">
