@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { Card } from 'antd';
-import superturtle from 'C:/Users/dgdg1/book_review_app/src/AfterLogin/superturtle.jpg'; 
+import superturtle from './superturtle.jpg'; 
 
 const useStyles = makeStyles((theme) => ({
   root: {

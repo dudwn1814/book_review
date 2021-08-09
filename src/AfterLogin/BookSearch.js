@@ -1,7 +1,8 @@
+import React from 'react';
 import { Input, AutoComplete } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
-//자동완성이 modal 바깥에 뜸,,,
+//스타일이 이쁘게 안나온다...
 
 const renderTitle = (title) => (
   <span>
@@ -51,17 +52,19 @@ const options = [
   },
 ];
 
-const BookSearch = () => (
-  <AutoComplete
-    dropdownClassName="certain-category-search-dropdown"
-    dropdownMatchSelectWidth={500}
-    style={{
-      width: 250,
-    }}
-    options={options}
-  >
-    <Input.Search size="large" placeholder="input here" />
-  </AutoComplete>
-);
+function BookSearch(){
+  return(
+    <AutoComplete
+      dropdownClassName="certain-category-search-dropdown"
+      dropdownMatchSelectWidth={500}
+      style={{
+        width: 250,
+      }}
+      options={options}
+    >
+      <Input.Search size="large" placeholder="input here" />
+    </AutoComplete>
+  );
+}
 
 export default BookSearch;
