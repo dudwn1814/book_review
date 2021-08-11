@@ -2,7 +2,7 @@ import React from 'react';
 import { Input, AutoComplete } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
-//스타일이 이쁘게 안나온다...
+//스타일이 예시처럼 안나온다... 렌더링의 차이일까
 
 const renderTitle = (title) => (
   <span>

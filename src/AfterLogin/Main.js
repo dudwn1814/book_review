@@ -1,18 +1,67 @@
 import React from 'react';
+import ReactDOM from "react-dom";
 import BookCard from './BookCard';
 import sampleLogo from './sampleLogo.png'; 
+import { Layout, Menu } from 'antd';
+import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+  UploadOutlined,
+} from '@ant-design/icons';
 
-function Main(){
-    return(
-        <div>
-            <img src={sampleLogo} style={{height:"100px", width:"100px"}}/>
-            <h3>(닉네임)님<br/> 반갑습니다</h3>
-            <div>
-                <BookCard style={{position: "absolute", right: "0px"}}/>    
-            </div>
-            <button>작성하기</button>
-        </div>
+const { Header, Sider, Content } = Layout;
+
+class Main extends React.Component {
+  state = {
+    collapsed: false,
+  };
+
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  };
+
+  render() {
+    return (
+      <Layout>
+        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+          <div className="logo" />
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+            <Menu.Item key="1" icon={<UserOutlined />}>
+              nav 1
+            </Menu.Item>
+            <Menu.Item key="2" icon={<VideoCameraOutlined />}>
+              nav 2
+            </Menu.Item>
+            <Menu.Item key="3" icon={<UploadOutlined />}>
+              nav 3
+            </Menu.Item>
+          </Menu>
+        </Sider>
+        <Layout className="site-layout">
+          <Header className="site-layout-background" style={{ padding: 0 }}>
+            {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+              className: 'trigger',
+              onClick: this.toggle,
+            })}
+          </Header>
+          <Content
+            className="site-layout-background"
+            style={{
+              margin: '24px 16px',
+              padding: 24,
+              minHeight: 280,
+            }}
+          >
+            Content
+          </Content>
+        </Layout>
+      </Layout>
     );
+  }
 }
 
 export default Main;

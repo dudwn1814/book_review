@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from "./App.js";
 import Main from "./AfterLogin/Main";
-import WriteBtn from "./AfterLogin/WriteBtn";
-import BookSearch from "./AfterLogin/BookSearch";
 
-
-ReactDOM.render(<BookSearch />, document.getElementById('root'));
+//ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Main />, document.getElementById('root'));

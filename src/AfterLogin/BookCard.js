@@ -1,70 +1,26 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 import { Card } from 'antd';
 import superturtle from './superturtle.jpg'; 
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(1),
-    color: theme.palette.text.secondary,
-  },
-}));
 
-export default function BookCard() {
-  const classes = useStyles();
+//한줄에 여러개 나오게 어떻게...?
+const gridStyle = {
+  width: '30%',
+  textAlign: 'center',
+};
 
-  function FormRow() {
-    return (
-      <React.Fragment>
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>
-          <Card
-                hoverable
-                style={{ width: {superturtle}.width }}
-                cover={<img alt="example" src={superturtle} />}
-            />    
-          </Paper>
-        </Grid>
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>
-          <Card
-                hoverable
-                style={{ width: {superturtle}.width }}
-                cover={<img alt="example" src={superturtle} />}
-          />    
-          </Paper>
-        </Grid>
-        <Grid item xs={4}>
-        <Paper className={classes.paper}>
-          <Card
-                hoverable
-                style={{ width: {superturtle}.width }}
-                cover={<img alt="example" src={superturtle} />}
-          />    
-          </Paper>
-        </Grid>
-      </React.Fragment>
-    );
-  }
-
-  return (
-    <div className={classes.root}>
-      <Grid container spacing={1}>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
-        </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
-        </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
-        </Grid>
-      </Grid>
+function BookCard(){
+  return(
+    <div title="Card Title" style={{float:"right"}}>
+    <Card.Grid style={gridStyle}><img alt="example" src={superturtle} />슈퍼 거북</Card.Grid>
+    <Card.Grid style={gridStyle}><img alt="example" src={superturtle} />제목</Card.Grid>
+    <Card.Grid style={gridStyle}><img alt="example" src={superturtle} />제목</Card.Grid>
+    <Card.Grid style={gridStyle}><img alt="example" src={superturtle} />제목</Card.Grid>
+    <Card.Grid style={gridStyle}><img alt="example" src={superturtle} />제목</Card.Grid>
+    <Card.Grid style={gridStyle}><img alt="example" src={superturtle} />제목</Card.Grid>
+    <Card.Grid style={gridStyle}><img alt="example" src={superturtle} />제목</Card.Grid>
     </div>
-  );
+    );
 }
+
+export default BookCard;
