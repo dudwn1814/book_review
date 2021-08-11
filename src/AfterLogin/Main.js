@@ -1,67 +1,69 @@
-import React from 'react';
-import ReactDOM from "react-dom";
-import BookCard from './BookCard';
-import sampleLogo from './sampleLogo.png'; 
-import { Layout, Menu } from 'antd';
+import React from "react";
+import { Layout, Menu } from "antd";
 import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
+  UploadOutlined,
   UserOutlined,
   VideoCameraOutlined,
-  UploadOutlined,
-} from '@ant-design/icons';
+} from "@ant-design/icons";
+import "antd/dist/antd.css";
 
-const { Header, Sider, Content } = Layout;
+const { Header, Content, Footer, Sider } = Layout;
 
-class Main extends React.Component {
-  state = {
-    collapsed: false,
-  };
-
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    });
-  };
-
-  render() {
-    return (
+function Main() {
+  return (
+    <Layout>
+      <Sider
+        breakpoint="lg"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {
+          console.log(broken);
+        }}
+        onCollapse={(collapsed, type) => {
+          console.log(collapsed, type);
+        }}
+      >
+        <div
+          className="logo"
+          style={{
+            height: "32px",
+            margin: "16px",
+            background: "rgba(255, 255, 255, 0.3)",
+          }}
+        />
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
+          <Menu.Item key="1" icon={<UserOutlined />}>
+            nav 1
+          </Menu.Item>
+          <Menu.Item key="2" icon={<VideoCameraOutlined />}>
+            nav 2
+          </Menu.Item>
+          <Menu.Item key="3" icon={<UploadOutlined />}>
+            nav 3
+          </Menu.Item>
+          <Menu.Item key="4" icon={<UserOutlined />}>
+            nav 4
+          </Menu.Item>
+        </Menu>
+      </Sider>
       <Layout>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-          <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1" icon={<UserOutlined />}>
-              nav 1
-            </Menu.Item>
-            <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-              nav 2
-            </Menu.Item>
-            <Menu.Item key="3" icon={<UploadOutlined />}>
-              nav 3
-            </Menu.Item>
-          </Menu>
-        </Sider>
-        <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }}>
-            {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-              className: 'trigger',
-              onClick: this.toggle,
-            })}
-          </Header>
-          <Content
+        <Header
+          className="site-layout-sub-header-background"
+          style={{ padding: 0, background: "#fff" }}
+        />
+        <Content style={{ margin: "24px 16px 0" }}>
+          <div
             className="site-layout-background"
-            style={{
-              margin: '24px 16px',
-              padding: 24,
-              minHeight: 280,
-            }}
+            style={{ padding: 24, minHeight: 360, background: "#fff" }}
           >
-            Content
-          </Content>
-        </Layout>
+            content
+          </div>
+        </Content>
+        <Footer style={{ textAlign: "center" }}>
+          Ant Design ©2018 Created by Ant UED
+        </Footer>
       </Layout>
-    );
-  }
+    </Layout>
+  );
 }
 
 export default Main;

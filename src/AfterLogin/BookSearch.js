@@ -1,6 +1,6 @@
-import React from 'react';
-import { Input, AutoComplete } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import React from "react";
+import { Input, AutoComplete } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 //스타일이 예시처럼 안나온다... 렌더링의 차이일까
 
@@ -9,7 +9,7 @@ const renderTitle = (title) => (
     {title}
     <a
       style={{
-        float: 'right',
+        float: "right",
       }}
       href="https://www.google.com/search?q=antd"
       target="_blank"
@@ -25,8 +25,8 @@ const renderItem = (title, count) => ({
   label: (
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'space-between',
+        display: "flex",
+        justifyContent: "space-between",
       }}
     >
       {title}
@@ -39,21 +39,27 @@ const renderItem = (title, count) => ({
 
 const options = [
   {
-    label: renderTitle('Libraries'),
-    options: [renderItem('AntDesign', 10000), renderItem('AntDesign UI', 10600)],
+    label: renderTitle("Libraries"),
+    options: [
+      renderItem("AntDesign", 10000),
+      renderItem("AntDesign UI", 10600),
+    ],
   },
   {
-    label: renderTitle('Solutions'),
-    options: [renderItem('AntDesign UI FAQ', 60100), renderItem('AntDesign FAQ', 30010)],
+    label: renderTitle("Solutions"),
+    options: [
+      renderItem("AntDesign UI FAQ", 60100),
+      renderItem("AntDesign FAQ", 30010),
+    ],
   },
   {
-    label: renderTitle('Articles'),
-    options: [renderItem('AntDesign design language', 100000)],
+    label: renderTitle("Articles"),
+    options: [renderItem("AntDesign design language", 100000)],
   },
 ];
 
-function BookSearch(){
-  return(
+function BookSearch() {
+  return (
     <AutoComplete
       dropdownClassName="certain-category-search-dropdown"
       dropdownMatchSelectWidth={500}
