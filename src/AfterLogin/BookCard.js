@@ -1,23 +1,47 @@
 import React from 'react';
-import { Card } from 'antd';
+import { Card, Col, Row } from 'antd';
+import turtle from '../Images/superturtle.jpg';
 
-//  한줄에 여러개 나오게 어떻게...?
-
-const gridStyle = {
-  width: '20%',
-  textAlign: 'center',
-};
+// 페이지 사이즈를 내용에 따라 바뀌도록..
 
 function BookCard() {
   return (
-    <Card title='Card Title'>
-      {/* <Card.Grid style={gridStyle}><img alt="example" src={superturtle} />슈퍼 거북</Card.Grid> */}
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-    </Card>
+    <div className='site-card-wrapper'>
+      <Row gutter={16}>
+        <Col span={8}>
+          <Card>
+            <img alt='example' src={turtle} />
+            <h5 style={{ textAlign: 'center' }}>슈퍼거북</h5>
+          </Card>
+        </Col>
+        <Col span={8}>
+          <Card>
+            <img alt='example' src={turtle} />
+            <h5 style={{ textAlign: 'center' }}>슈퍼거북</h5>
+          </Card>
+        </Col>
+        <Col span={8}>
+          <Card>
+            <img alt='example' src={turtle} />
+            <h5 style={{ textAlign: 'center' }}>슈퍼거북</h5>
+          </Card>
+        </Col>
+      </Row>
+      <Row gutter={16}>
+        <Col span={8}>
+          <Card>
+            <img alt='example' src={turtle} />
+            <h5 style={{ textAlign: 'center' }}>슈퍼거북</h5>
+          </Card>
+        </Col>
+        <Col span={8}>
+          <Card>
+            <img alt='example' src={turtle} />
+            <h5 style={{ textAlign: 'center' }}>슈퍼거북</h5>
+          </Card>
+        </Col>
+      </Row>
+    </div>
   );
 }
 

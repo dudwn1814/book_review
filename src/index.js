@@ -1,11 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Main from "./AfterLogin/Main";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
+    <App />
   </React.StrictMode>,
 
-  document.getElementById("root")
+  document.getElementById('root')
 );
