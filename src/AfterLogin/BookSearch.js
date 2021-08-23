@@ -92,9 +92,9 @@ function BookSearch() {
           <h2 style={{ paddingTop: '30px' }}>검색하기</h2>
           <AutoComplete
             dropdownClassName='certain-category-search-dropdown'
-            dropdownMatchSelectWidth={500}
+            // dropdownMatchSelectWidth={}
             style={{
-              width: 400,
+              width: '80%',
             }}
             options={options}
           >

@@ -1,13 +1,46 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import Logo from '../Images/sampleLogo.png';
 import BookCard from './BookCard';
 
-const { Content, Footer, Sider } = Layout;
+// breakpoint: 화면 크기에 따라 줄이는 버튼이 나타남 (xs, sm, md, lg, xl, xxl)
+// collapsed: 현재 상태 설정?(boolean)
+// collapsedWidth: sidebar의 넓이, 0으로 돼있을때 버튼 나타남 (default는 80)
+// onBreakpoint: callback 함수, breakpoints가 바뀌었을때 실행됨..
+// onCollapse: callback 함수, trigger가 눌렸거나 반응형 레이아웃이 실행중일때 실행..
 
-// 화면 크기 작아졌을때 -> trigger 없애기, 작성하기 버튼 위치 조절, 이미지 겹쳐짐
+const { Content, Sider } = Layout;
+
+export const ReviewDiv = styled.div`
+  padding: 24px;
+  min-height: 360;
+  background-color: #fff;
+  height: 90vh;
+  border-radius: 5%;
+`;
+
+export const LogoImg = styled.img`
+  height: 48px;
+  margin: 24px;
+  background-color: rgba(255, 255, 255, 0.3);
+`;
+
+export const BottomButton = styled.button`
+  position: fixed;
+  text-align: center;
+  margi-left: 10px;
+  margin-bottom: 20px;
+  bottom: 0;
+  background-color: white;
+`;
+
+export const TitleP = styled.p`
+  font-size: 25px;
+  margin-bottom: 5px;
+  text-indent: 20px;
+`;
 
 function Main() {
   return (
@@ -23,69 +56,26 @@ function Main() {
           console.log(collapsed, type);
         }}
       >
-        <div className='logo'>
-          <img
-            src={Logo}
-            alt='logo'
-            style={{
-              height: '48px',
-              margin: '24px',
-              background: 'rgba(255, 255, 255, 0.3)',
-            }}
-          />
-        </div>
+        <LogoImg src={Logo} alt='logo' />
+
         <h2 style={{ marginLeft: '20px' }}>
           (닉네임)님 <br /> 반갑습니다.
         </h2>
         <Menu mode='inline'>
-          <Menu.Item key='1' icon={<UserOutlined />}>
-            마이페이지
-          </Menu.Item>
+          <Menu.Item key='1'>마이페이지</Menu.Item>
         </Menu>
-        <button
-          type='button'
-          style={{
-            position: 'fixed',
-            textAlign: 'center',
-            marginLeft: '10px',
-            marginBottom: '20px',
-            bottom: '0',
-            backgroundColor: 'white',
-          }}
-        >
-          작성하기
-        </button>
+        <BottomButton>작성하기</BottomButton>
       </Sider>
       <Layout>
         <Content style={{ margin: '24px 16px 0' }}>
-          <div
-            className='site-layout-background'
-            style={{
-              padding: 24,
-              minHeight: 360,
-              background: '#fff',
-              height: '90vh',
-              borderRadius: '5%',
-            }}
-          >
-            <p
-              style={{
-                fontSize: '25px',
-                marginBottom: '5px',
-                textIndent: '20px',
-              }}
-            >
-              Review
-            </p>
-            <p style={{ fontSize: '15px', textIndent: '20px' }}>
+          <ReviewDiv>
+            <TitleP>Review</TitleP>
+            <TitleP style={{ fontSize: '15px' }}>
               총 n권의 도서에 대한 감상을 남겼습니다.
-            </p>
+            </TitleP>
             <BookCard />
-          </div>
+          </ReviewDiv>
         </Content>
-        {/* <Footer style={{ textAlign: 'center' }}>
-          Ant Design ©2018 Created by Ant UED
-        </Footer> */}
       </Layout>
     </Layout>
   );

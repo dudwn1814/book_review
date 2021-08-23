@@ -1,44 +1,39 @@
 import React from 'react';
-import { Card, Col, Row } from 'antd';
+import styled from 'styled-components';
+import { Col, Row } from 'antd';
 import turtle from '../Images/superturtle.jpg';
 
-// 페이지 사이즈를 내용에 따라 바뀌도록..
+// gutter: column 사이의 간격(=margin)
+// span: 몇칸을 차지하는지
+
+export const BookTitle = styled.h5`
+  text-align: center;
+`;
+
+export const BookImg = styled.img`
+  margin-left: 15px;
+  margin-top: 20px;
+`;
 
 function BookCard() {
   return (
-    <div className='site-card-wrapper'>
-      <Row gutter={16}>
+    <div>
+      <Row gutter={0}>
         <Col span={8}>
-          <Card>
-            <img alt='example' src={turtle} />
-            <h5 style={{ textAlign: 'center' }}>슈퍼거북</h5>
-          </Card>
+          <BookImg alt='example' src={turtle} />
+          <BookTitle>슈퍼거북</BookTitle>
         </Col>
         <Col span={8}>
-          <Card>
-            <img alt='example' src={turtle} />
-            <h5 style={{ textAlign: 'center' }}>슈퍼거북</h5>
-          </Card>
+          <BookImg alt='example' src={turtle} />
+          <BookTitle>슈퍼거북</BookTitle>
         </Col>
         <Col span={8}>
-          <Card>
-            <img alt='example' src={turtle} />
-            <h5 style={{ textAlign: 'center' }}>슈퍼거북</h5>
-          </Card>
-        </Col>
-      </Row>
-      <Row gutter={16}>
-        <Col span={8}>
-          <Card>
-            <img alt='example' src={turtle} />
-            <h5 style={{ textAlign: 'center' }}>슈퍼거북</h5>
-          </Card>
+          <BookImg alt='example' src={turtle} />
+          <BookTitle>슈퍼거북</BookTitle>
         </Col>
         <Col span={8}>
-          <Card>
-            <img alt='example' src={turtle} />
-            <h5 style={{ textAlign: 'center' }}>슈퍼거북</h5>
-          </Card>
+          <BookImg alt='example' src={turtle} />
+          <BookTitle>슈퍼거북</BookTitle>
         </Col>
       </Row>
     </div>
