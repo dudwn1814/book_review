@@ -1,12 +1,13 @@
 import React from 'react';
-import { Layout, Input, AutoComplete } from 'antd';
+import { Input, AutoComplete } from 'antd';
 import 'antd/dist/antd.css';
 import { UserOutlined } from '@ant-design/icons';
+import { BackgroundDiv, ContentDiv, CloseButton } from '../Style/styled';
 
-// 화면이 작아졌을때 사이즈가 유동적으로 바뀌게...
-// 옵션 바꾸기
-
-const { Content } = Layout;
+// dropdownClassName: 드롭다운 메뉴의 class name
+// dropdownMatchSelectWidth: 드롭다운 메뉴와 input의 길이를 동일하게(default는 동일, boolean)
+// options: { label, value }[] 형식
+//  value: 선택된 옵션
 
 const renderTitle = (title) => (
   <span>
@@ -64,45 +65,22 @@ const options = [
 
 function BookSearch() {
   return (
-    <Layout>
-      <Content style={{ height: '100vh' }}>
-        <div
-          className='site-layout-background'
+    <BackgroundDiv>
+      <ContentDiv>
+        <CloseButton>&times;</CloseButton>
+        <h2 style={{ paddingTop: '30px' }}>검색하기</h2>
+        <AutoComplete
+          dropdownClassName='certain-category-search-dropdown'
+          // dropdownMatchSelectWidth={}
           style={{
-            paddingBottom: 24,
-            paddingLeft: 24,
-            paddingRight: 24,
-            background: '#fff',
-            margin: '100px',
-            marginRight: '200px',
-            marginLeft: '200px',
+            width: '80%',
           }}
+          options={options}
         >
-          <button
-            type='button'
-            style={{
-              float: 'right',
-              backgroundColor: 'white',
-              border: 'none',
-              fontSize: '20px',
-            }}
-          >
-            &times;
-          </button>
-          <h2 style={{ paddingTop: '30px' }}>검색하기</h2>
-          <AutoComplete
-            dropdownClassName='certain-category-search-dropdown'
-            // dropdownMatchSelectWidth={}
-            style={{
-              width: '80%',
-            }}
-            options={options}
-          >
-            <Input.Search size='medium' placeholder='input here' />
-          </AutoComplete>
-        </div>
-      </Content>
-    </Layout>
+          <Input.Search size='medium' placeholder='input here' />
+        </AutoComplete>
+      </ContentDiv>
+    </BackgroundDiv>
   );
 }
 

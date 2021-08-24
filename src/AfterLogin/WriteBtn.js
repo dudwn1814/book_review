@@ -1,32 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
-
-export const BackgroundDiv = styled.div`
-  background: rgba(0, 0, 0, 0.3);
-  height: 100vh;
-`;
-
-export const ContentDiv = styled.div`
-  text-align: center;
-  padding-bottom: 100px;
-  padding-left: 24;
-  padding-right: 24;
-  background-color: #fff;
-  margin-right: 200px;
-  margin-left: 200px;
-`;
-
-export const CloseButton = styled.button`
-  float: right;
-  background-color: #fff;
-  border: none;
-  font-size: 20px;
-`;
-
-export const StyledButton = styled.button`
-  margin-top: 10px;
-  width: 110px;
-`;
+import {
+  BackgroundDiv,
+  ContentDiv,
+  CloseButton,
+  StyledButton,
+} from '../Style/styled';
 
 function WriteBtn() {
   return (

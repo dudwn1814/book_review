@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
 import 'antd/dist/antd.css';
 import Logo from '../Images/sampleLogo.png';
 import BookCard from './BookCard';
+import { ReviewDiv, LogoImg, BottomButton, TitleP } from '../Style/styled';
 
 // breakpoint: 화면 크기에 따라 줄이는 버튼이 나타남 (xs, sm, md, lg, xl, xxl)
 // collapsed: 현재 상태 설정?(boolean)
@@ -12,35 +12,6 @@ import BookCard from './BookCard';
 // onCollapse: callback 함수, trigger가 눌렸거나 반응형 레이아웃이 실행중일때 실행..
 
 const { Content, Sider } = Layout;
-
-export const ReviewDiv = styled.div`
-  padding: 24px;
-  min-height: 360;
-  background-color: #fff;
-  height: 90vh;
-  border-radius: 5%;
-`;
-
-export const LogoImg = styled.img`
-  height: 48px;
-  margin: 24px;
-  background-color: rgba(255, 255, 255, 0.3);
-`;
-
-export const BottomButton = styled.button`
-  position: fixed;
-  text-align: center;
-  margi-left: 10px;
-  margin-bottom: 20px;
-  bottom: 0;
-  background-color: white;
-`;
-
-export const TitleP = styled.p`
-  font-size: 25px;
-  margin-bottom: 5px;
-  text-indent: 20px;
-`;
 
 function Main() {
   return (
