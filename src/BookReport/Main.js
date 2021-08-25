@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import 'antd/dist/antd.css';
 import Logo from '../Images/sampleLogo.png';
@@ -35,7 +36,9 @@ function Main() {
         <Menu mode='inline'>
           <Menu.Item key='1'>마이페이지</Menu.Item>
         </Menu>
-        <BottomButton>작성하기</BottomButton>
+        <Link to='/find'>
+          <BottomButton>작성하기</BottomButton>
+        </Link>
       </Sider>
       <Layout>
         <Content style={{ margin: '24px 16px 0' }}>

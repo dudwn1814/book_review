@@ -1,11 +1,24 @@
 import React from 'react';
-import Main from './AfterLogin/Main';
-import WriteBtn from './AfterLogin/WriteBtn';
-import BookSearch from './AfterLogin/BookSearch';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Main from './BookReport/Main';
+import Findinfo from './BookReport/Findinfo';
+import BookSearch from './BookReport/BookSearch';
 import Responsive from './Responsive';
 
 function App() {
-  return <Responsive />;
+  return (
+    <BrowserRouter>
+      <Route path='/' exact>
+        <Main />
+      </Route>
+      <Route path='/find'>
+        <Findinfo />
+      </Route>
+      <Route path='/search'>
+        <BookSearch />
+      </Route>
+    </BrowserRouter>
+  );
 }
 
 export default App;

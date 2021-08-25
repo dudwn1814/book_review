@@ -32,8 +32,8 @@ export const LogoImg = styled.img`
 `;
 
 export const BookImg = styled.img`
-  margin-left: 15px;
-  margin-top: 20px;
+  display: block;
+  margin: 0px auto;
 `;
 
 // button
