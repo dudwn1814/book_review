@@ -12,9 +12,11 @@ export const ReviewDiv = styled.div`
 export const BackgroundDiv = styled.div`
   background: rgba(0, 0, 0, 0.3);
   height: 100vh;
+  overflow: hidden;
 `;
 
 export const ContentDiv = styled.div`
+  margin-top: 200px;
   text-align: center;
   padding-bottom: 100px;
   padding-left: 24;
@@ -56,9 +58,11 @@ export const CloseButton = styled.button`
 export const StyledButton = styled.button`
   margin-top: 10px;
   width: 110px;
+  text-decoration: none;
 `;
 
 // p, h
+//  color: ${props => props.primary ? "white" : "palevioletred"};
 export const TitleP = styled.p`
   font-size: 25px;
   margin-bottom: 5px;

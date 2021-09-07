@@ -24,7 +24,10 @@ const Default = ({ children }) => {
 // gutter: column 사이의 간격(=margin)
 // span: 몇칸을 차지하는지
 
-// 페이지 크기에 따라 개수 조절하기 -> 변수를 통해!
+// 페이지 크기에 따라 개수 조절하기 -> col를 component로 만들어서.. span, title, image를 props로, 이 파일에서 서버를 통해
+// db에서 필요한걸 가져오는,, (리스트로) -> 이 파일에서 for 문을 통해 보여주기 아니면 뭐 table을 통해 리스트를 넣어서 착착착!
+// ex) [ {title:어쩌구, omg:어쩌구 },{}...]
+
 function BookCard() {
   return (
     <div>

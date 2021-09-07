@@ -12,6 +12,8 @@ import { ReviewDiv, LogoImg, BottomButton, TitleP } from '../Style/styled';
 // onBreakpoint: callback 함수, breakpoints가 바뀌었을때 실행됨..
 // onCollapse: callback 함수, trigger가 눌렸거나 반응형 레이아웃이 실행중일때 실행..
 
+// 프레임워크(Node js), 데이터베이스(Mysql)
+
 const { Content, Sider } = Layout;
 
 function Main() {

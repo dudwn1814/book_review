@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Main from './BookReport/Main';
 import Findinfo from './BookReport/Findinfo';
 import BookSearch from './BookReport/BookSearch';
-import Responsive from './Responsive';
+import WriteReview from './BookReport/WriteReview';
 
 function App() {
   return (
@@ -16,6 +16,9 @@ function App() {
       </Route>
       <Route path='/search'>
         <BookSearch />
+      </Route>
+      <Route path='/write'>
+        <WriteReview />
       </Route>
     </BrowserRouter>
   );
